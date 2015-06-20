@@ -1,0 +1,7 @@
+bajor_web_service_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BajorWebServiceBundle:Default:index }
+    
+bajor_web_service_hello:
+    path:     /soap
+    defaults: { _controller: BajorWebServiceBundle:HelloService:index }
