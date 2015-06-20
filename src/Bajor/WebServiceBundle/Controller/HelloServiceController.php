@@ -17,8 +17,9 @@ class HelloServiceController extends Controller
 
         ob_start();
         $server->handle();
-        $response->setContent(ob_get_clean());
-
+        if (ob_get_length() > 0) {
+          $response->setContent(ob_get_clean());
+        }
         return $response;
     }
 }
