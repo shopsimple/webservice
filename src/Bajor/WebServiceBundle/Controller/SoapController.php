@@ -62,6 +62,7 @@ class SoapController extends Controller
         
         $soap->setClass($this->get($class));
         // $soap->setClass('Bajor\WebServiceBundle\Services\CheckService');
+        
         //$soap->setObject(new CheckService());
         
         
