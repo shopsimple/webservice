@@ -5,3 +5,7 @@ bajor_web_service_homepage:
 bajor_web_service_hello:
     path:     /soap
     defaults: { _controller: BajorWebServiceBundle:HelloService:index }
+    
+bajor_api_soap_check:
+    path: /api/soap/check
+    defaults: { _controller: BajorWebServiceBundle:Soap:check }

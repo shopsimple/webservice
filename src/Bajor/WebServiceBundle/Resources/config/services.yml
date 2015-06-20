@@ -2,3 +2,7 @@ services:
 #    bajor_web_service.example:
 #        class: Bajor\WebServiceBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+
+     check_service:
+         class: Bajor\WebServiceBundle\Services\CheckService

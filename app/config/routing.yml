@@ -1,3 +1,5 @@
+# app/config/routing.yml
+
 bajor_web_service:
     resource: "@BajorWebServiceBundle/Resources/config/routing.yml"
     prefix:   /
@@ -5,3 +7,8 @@ bajor_web_service:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+    
+
+#bajor_web_api:
+#    resource: "@BajorWebServiceBundle/Resources/config/routing.yml"
+#    prefix:   /api
