@@ -6,10 +6,43 @@
 WebService - Quadratic Equation's documentation!
 ===========================================================
 
-Project contains Web Service bundle:
+PHP / Symfony2
+-----------------
 
-* form to resolve quadratic equation 
-* web service to resolve quadratic equation  
+Projekt został wykonany w języku PHP przy użyciu framworka Symfony2.
+
+Przy implementacji Web Servisu użyto biblioteki Zendframwork Zend-Soap.
+
+
+Git
+-----------------
+
+Do wersjonowania użyto systemu Git i umieszczono projekt w repozytorium w serwisie GitHub:
+
+https://github.com/shopsimple/webservice
+
+
+Sphinx
+------------------
+
+Do wygenerowania dokumentacji użyto narzędzia Sphinx.
+
+Główny plik umieszczony jest w katalogu:
+
+/_build/html/index.html
+
+
+WSDL
+--------------------------
+
+Web Service został umieszczony na serwerze:
+
+http://ws1.ppiatek.linuxpl.eu/api/equation/quadratic?wsdl
+
+Korzystanie z danego web service-u jest możliwe po pobraniu aplikacji z GitHub-a i zrobieniu update za pomoca Composer-a:
+
+>> composer update 
+
 
 
 Contents:
