@@ -1,6 +1,13 @@
-bajor_web_service_homepage:
-    path:     /hello/{name}
+bajor_form:
+    path:     /
     defaults: { _controller: BajorWebServiceBundle:Default:index }
+
+bajor_form_resolved:
+    path:     /resolved
+    defaults: { _controller: BajorWebServiceBundle:Default:resolved }
+    
+    
+    
     
 bajor_web_service_hello:
     path:     /soap
