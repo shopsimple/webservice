@@ -8,36 +8,45 @@
     <h1>Rozwiązanie równania kwadratowego:</h1>
     <h3>y = {{ factor_a }}x<sup>2</sup> + {{ factor_b }}x + {{ factor_c }}</h3>
     
-    <div>Delta: {{ solution.delta }}</div>
-    <div>{{ solution.deltaInfo }}</div>
+    {% if error_msg != '' %}
+      
+       <div class="alert alert-danger" role="alert">{{ error_msg }}</div>
     
-    <div>
-    {% if solution.delta > 0 %}
-        
-        Pierwiastki: <br />
-        x1: {{ solution.x_1 }}<br />  
-        x2: {{ solution.x_2 }} 
-        
-    {% elseif solution.delta < 0 %}
-        
-        Pierwiastki: <br />
-        {{ solution.re_1 }} j{{ solution.im_1 }}<br />  
-        {{ solution.re_2 }} j{{ solution.im_2 }}
-        
-    {% elseif solution.delta == 0 %}
+    {% else %}
     
-        Pierwiastek: <br />
-        x0: {{ solution.x_0 }}
+        <div>Delta: {{ solution.delta }}</div>
+        <div>{{ solution.deltaInfo }}</div>
+        
+        <div>
+        {% if solution.delta > 0 %}
+            
+            Pierwiastki: <br />
+            x1: {{ solution.x_1 }}<br />  
+            x2: {{ solution.x_2 }} 
+            
+        {% elseif solution.delta < 0 %}
+            
+            Pierwiastki: <br />
+            {{ solution.re_1 }} j{{ solution.im_1 }}<br />  
+            {{ solution.re_2 }} j{{ solution.im_2 }}
+            
+        {% elseif solution.delta == 0 %}
+        
+            Pierwiastek: <br />
+            x0: {{ solution.x_0 }}
+        
+        {% endif %}
+        </div>
+        
+        <h3>Rozwiązania:</h3>
+        <ul>
+            {% for x, y in solution.solutions %}
+                <li>dla x = {{ x }}, y = {{ y }}</li>
+            {% endfor %}
+        </ul>
     
     {% endif %}
-    </div>
     
-    <h3>Rozwiązania:</h3>
-    <ul>
-        {% for x, y in solution.solutions %}
-            <li>dla x = {{ x }}, y = {{ y }}</li>
-        {% endfor %}
-    </ul>
     
     <br />
     <br />

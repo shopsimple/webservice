@@ -4,7 +4,7 @@ namespace Bajor\WebServiceBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Bajor\WebServiceBundle\Entity\QuadraticEquation;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller; 
 use Zend\Soap;
 
 class DefaultController extends Controller
@@ -42,6 +42,8 @@ class DefaultController extends Controller
     
     public function resolvedAction(Request $request)
     {
+        $errorMsg = '';
+        $response = null;
         
         $quadraticEquation = new QuadraticEquation();
 
@@ -64,16 +66,24 @@ class DefaultController extends Controller
         
         $wsdlUrl = "http://ws1.ppiatek.linuxpl.eu/api/equation/quadratic?wsdl";
         
-        $client = new \SoapClient($wsdlUrl);
-        $response = $client->quadratic($a, $b, $c, $minX, $maxX);
+        try {
         
+            $client = new \SoapClient($wsdlUrl);
+            $response = $client->quadratic($a, $b, $c, $minX, $maxX);
+        
+        } catch (\SoapFault $e) {
+            $errorMsg = $e->getMessage();
+        } catch (Exception $e) {
+            $errorMsg = $e->getMessage();
+        }
         
         return $this->render('BajorWebServiceBundle:Default:resolved.html.twig', 
             array(
                 'factor_a' => $a,
                 'factor_b' => $b,
                 'factor_c' => $c,
-                'solution' => $response
+                'solution' => $response,
+                'error_msg' => $errorMsg
             )
         );
     }
