@@ -7,6 +7,7 @@ use Bajor\WebServiceBundle\Entity\QuadraticEquation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller; 
 use Zend\Soap;
 
+
 class DefaultController extends Controller
 {
     
@@ -25,14 +26,6 @@ class DefaultController extends Controller
             ->add('max_x', 'number', array('label'  => 'Maximum X'))
             ->add('resolve', 'submit', array('label' => 'Rozwiąż'))
             ->getForm();
-
-        //$form->handleRequest($request);
-
-        //if ($form->isValid()) {
-            // perform some action, such as saving the task to the database
-    
-        //    return $this->redirectToRoute('form_success');
-        //}
 
 
         return $this->render('BajorWebServiceBundle:Default:index.html.twig', array(
