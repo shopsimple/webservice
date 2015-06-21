@@ -14,6 +14,7 @@ class DefaultController extends Controller
     
     public function indexAction()
     {
+        
         $quadraticEquation = new QuadraticEquation();
 
         $form = $this->createFormBuilder($quadraticEquation)
@@ -35,6 +36,7 @@ class DefaultController extends Controller
     
     public function resolvedAction(Request $request)
     {
+        
         $errorMsg = '';
         $response = null;
         

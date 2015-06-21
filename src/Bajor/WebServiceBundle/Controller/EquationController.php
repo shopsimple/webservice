@@ -10,6 +10,7 @@ use Zend\Soap;
 
 class EquationController extends Controller
 {
+    
     public function init()
     {
         // No cache
@@ -76,7 +77,6 @@ class EquationController extends Controller
             $response->setContent(ob_get_clean());
             
         } catch (SoapFault $e) {
-          //do something about the problem
           echo $e->faultcode; 
         }
         
