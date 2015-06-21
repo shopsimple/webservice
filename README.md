@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-# webservice
+ 
 =======
-Symfony Standard Edition
+Symfony Standard Edition - Web Service - Quadratic Equation
 ========================
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony2
@@ -70,4 +69,4 @@ Enjoy!
 [11]: http://symfony.com/doc/2.7/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.7/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.7/bundles/SensioGeneratorBundle/index.html
->>>>>>> ded6a8700e956ee0b90246468e1ccfc575980bae
+

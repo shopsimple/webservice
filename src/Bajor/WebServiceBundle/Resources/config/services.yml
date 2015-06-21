@@ -4,5 +4,5 @@ services:
 #        arguments: [@service_id, "plain_value", %parameter%]
 
 
-     check_service:
-         class: Bajor\WebServiceBundle\Services\CheckService
+     eq_quadratic_service:
+         class: Bajor\WebServiceBundle\Services\EquationService

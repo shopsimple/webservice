@@ -1,14 +1,14 @@
 <?php
-# src/Bajor/WebServiceBundle/Controller/SoapController.php
+# src/Bajor/WebServiceBundle/Controller/EquationController.php
 
 namespace Bajor\WebServiceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Bajor\WebServiceBundle\Services\CheckService;
+use Bajor\WebServiceBundle\Services\EquationService;
 use Zend\Soap;
 
-class SoapController extends Controller
+class EquationController extends Controller
 {
     public function init()
     {
@@ -17,12 +17,12 @@ class SoapController extends Controller
         ini_set('soap.wsdl_cache_ttl', 0);
     }
 
-    public function checkAction()
+    public function quadraticAction()
     {
         if(isset($_GET['wsdl'])) {
-            return $this->handleWSDL($this->generateUrl('bajor_api_soap_check', array(), true), 'check_service'); 
+            return $this->handleWSDL($this->generateUrl('bajor_api_equation_quadratic', array(), true), 'eq_quadratic_service'); 
         } else {
-            return $this->handleSOAP($this->generateUrl('bajor_api_soap_check', array(), true), 'check_service'); 
+            return $this->handleSOAP($this->generateUrl('bajor_api_equation_quadratic', array(), true), 'eq_quadratic_service'); 
         }
  }
 
@@ -38,7 +38,7 @@ class SoapController extends Controller
 
        // Response
        $response = new Response();
-       $response->headers->set('Content-Type', 'text/xml; charset=ISO-8859-1');
+       $response->headers->set('Content-Type', 'text/xml; charset=ISO-8859-2');
        ob_start();
 
        // Handle Soap
@@ -65,7 +65,7 @@ class SoapController extends Controller
         
         // Response
         $response = new Response();
-        $response->headers->set('Content-Type', 'text/xml; charset=ISO-8859-1');
+        $response->headers->set('Content-Type', 'text/xml; charset=ISO-8859-2');
         
         
         try {
