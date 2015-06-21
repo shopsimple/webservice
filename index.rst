@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-WebService - Quadratic Equation's documentation!
+Dokumentacja: WebService - Rówanie kwadratowe!
 ===========================================================
 
 PHP / Symfony2
