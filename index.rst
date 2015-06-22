@@ -6,6 +6,8 @@
 Dokumentacja: WebService - Rówanie kwadratowe!
 ===========================================================
 
+
+
 PHP / Symfony2
 -----------------
 
@@ -32,7 +34,7 @@ Główny plik umieszczony jest w katalogu:
 /_build/html/index.html
 
 
-WSDL
+Soap / WSDL
 --------------------------
 
 Web Service został umieszczony na serwerze:
@@ -42,6 +44,12 @@ http://ws1.ppiatek.linuxpl.eu/api/equation/quadratic?wsdl
 Korzystanie z danego web service-u jest możliwe po pobraniu aplikacji z GitHub-a i zrobieniu update za pomoca Composer-a:
 
 >> composer update 
+
+
+Działająca wersja
+--------------------------------
+
+http://ws1.ppiatek.linuxpl.eu
 
 
 
